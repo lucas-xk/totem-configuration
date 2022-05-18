@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt update ; apt install ssh chromium openbox lightdm unclutter -y
+apt update ; apt install ssh samba chromium openbox lightdm unclutter -y
 
 echo "[SeatDefaults]
 autologin-user=totem

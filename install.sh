@@ -14,6 +14,4 @@ chromium --no-first-run --disable --disable-translate --disable-infobars --disab
 
 chown -R totem:totem /home/totem/.config/ && chmod -R 700 /home/totem/.config/
 
-apt install ssh samba -y
-
 reboot

@@ -1,6 +1,19 @@
 #!/bin/bash
 
-apt update ; apt install ssh chromium openbox lightdm unclutter -y
+apt update ; apt install ssh chromium openbox lightdm unclutter x11vnc -y
+
+echo "[Unit]
+Description=x11vnc service
+After=display-manager.service network.target syslog.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/x11vnc -forever -display :0 -auth guess -passwd semsenha
+ExecStop=/usr/bin/killall x11vnc
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target" >> /lib/systemd/system/x11vnc.service
 
 echo "[SeatDefaults]
 autologin-user=totem

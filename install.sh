@@ -15,6 +15,11 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target" >> /lib/systemd/system/x11vnc.service
 
+systemctl daemon-reload
+systemctl enable x11vnc.service
+systemctl start x11vnc.service
+systemctl status x11vnc.service
+
 echo "[SeatDefaults]
 autologin-user=totem
 user-session=openbox" >> /etc/lightdm/lightdm.conf
